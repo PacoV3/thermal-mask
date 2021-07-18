@@ -1,18 +1,12 @@
-FROM tensorflow/tensorflow
+FROM tensorflow/tensorflow:latest-jupyter
+
+RUN python3 -m pip install imutils
+RUN python3 -m pip install sklearn
+RUN python3 -m pip install opencv-python
 
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6 -y
+RUN apt-get install libxext6 -y
+RUN apt-get install libsm6 -y
+RUN apt-get install ffmpeg -y
 
-RUN pip install --upgrade pip
-RUN pip install opencv-contrib-python
-RUN pip install scikit-image
-RUN pip install pillow
-RUN pip install imutils
-RUN pip install scikit-learn
-RUN pip install matplotlib
-RUN pip install progressbar2
-RUN pip install beautifulsoup4
-RUN pip install pandas
-RUN pip install opencv-python
-
-CMD [ "python3", "-c" , "import tensorflow as tf; print(tf.__version__)"]
+CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
