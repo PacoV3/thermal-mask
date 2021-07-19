@@ -3,3 +3,9 @@
 /__pycache__
 /.vscode
 *.zip
+/bin
+/lib
+/share
+pyvenv.cfg
+/lib64
+/etc
