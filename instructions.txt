@@ -1,9 +1,4 @@
 - Build the image based on the Dockerfile
     docker build -t tensorflow-face-mask .
-- Run the container to train the model 
-    docker run -it --rm -v ${PWD}:/tmp -w /tmp tensorflow-face-mask python train_mask_detector.py --dataset dataset
-- Run the container to detect an image
-    docker run -it --rm -v ${PWD}:/tmp -w /tmp tensorflow-face-mask python detect_mask_image.py --image examples/example_01.png
-
-- Steps for tensorflow jupyter
-    docker run -it -v ${PWD}:/tf/notebooks -p 8888:8888 tensorflow/tensorflow:latest-jupyter 
+- Run the tensorflow - jupyter container
+    docker run -it --rm -v ${PWD}:/tf/notebooks -p 8888:8888 tensorflow/tensorflow:latest-jupyter
