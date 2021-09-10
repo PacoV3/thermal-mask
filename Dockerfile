@@ -2,6 +2,7 @@ FROM tensorflow/tensorflow:latest-jupyter
 
 WORKDIR "/tf/notebooks"
 
+RUN python3 -m pip install seaborn
 RUN python3 -m pip install imutils
 RUN python3 -m pip install sklearn
 RUN python3 -m pip install opencv-python
