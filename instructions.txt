@@ -1,7 +1,0 @@
-- Build the image based on the Dockerfile
-    docker build -t tensorflow-face-mask .
-- Run the tensorflow-jupyter container
-    For PowerShell
-        docker run -it --rm -v ${PWD}:/tf/notebooks -p 8888:8888 tensorflow-face-mask
-    For Linux:
-        docker run -it --rm -v $PWD:/tf/notebooks -p 8888:8888 tensorflow-face-mask
